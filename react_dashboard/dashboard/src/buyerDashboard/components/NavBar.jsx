@@ -26,18 +26,36 @@
 
 // export default NavBar
 
-import React from "react";
+// import React from "react";
 
-const NavBar = ({ setCurrentPage }) => {
+// const NavBar = ({ setCurrentPage }) => {
+//   return (
+//     <nav>
+//       <h1>Buyer Dashboard</h1>
+//       <button onClick={() => setCurrentPage("home")}>Home</button>
+//       <button onClick={() => setCurrentPage("shop")}>Shop</button>
+//     </nav>
+//   );
+// };
+
+// export default NavBar;
+
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+const NavBar = () => {
+  const navigate = useNavigate();
+
   return (
     <nav>
       <h1>Buyer Dashboard</h1>
-      <button onClick={() => setCurrentPage("home")}>Home</button>
-      <button onClick={() => setCurrentPage("shop")}>Shop</button>
+      <button onClick={() => navigate("/")}>Home</button>
+      <button onClick={() => navigate("/shop")}>Shop</button> {/* ✅ Navigate correctly */}
     </nav>
   );
 };
 
 export default NavBar;
+
 
 
