@@ -1,30 +1,15 @@
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .product-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-  }
-  
-  /* Shop Page Styles */
-.shop-container {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
 }
 
 .product-card {
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
+  padding: 10px;
   width: 200px;
+  text-align: center;
+  border-radius: 8px;
 }
 
 .product-card img {
@@ -114,4 +99,55 @@
 
 .checkout-button:hover {
   background-color: #0056b3;
+}
+
+/* Navbar Right Section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Dropdown Menu Fix */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  color:black;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  width: 150px;
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensure visibility */
+}
+
+.dropdown-menu.show {
+  display: block; /* Show when needed */
+}
+
+.dropdown-menu p {
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-menu p:hover {
+  background: #f0f0f0;
 }

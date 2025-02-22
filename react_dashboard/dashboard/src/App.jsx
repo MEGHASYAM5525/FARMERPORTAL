@@ -8,13 +8,17 @@ import Login from "./buyerDashboard/components/forms/Login";  // ✅ Fixed impor
 import Register from "./buyerDashboard/components/forms/Register";  // ✅ Fixed import
 import Shop from "./buyerDashboard/components/Shop";
 import Cart from "./buyerDashboard/components/Cart";
+import BuyerDashboardStats from "./buyerDashboard/components/BuyerDashboardStats";
+import { DashboardProvider } from "./buyerDashboard/components/Context/DashboardContext";
+import Profile from "./buyerDashboard/components/Profile";
+
 import NotFound from "./vendorDashboard/components/NotFound";
 
 import "./App.css";
 
 const App = () => {
   return (
-    
+    <DashboardProvider>
       <Routes>
         <Route path="/" element={<Major />} /> {/* Default page */}
         <Route path="/landing" element={<LandingPage />} /> {/* Farmer Landing Page */}
@@ -23,8 +27,12 @@ const App = () => {
         <Route path="/register" element={<Register />} /> {/* ✅ Fixed Capitalization */}
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/buyer-dashboard-stats" element={<BuyerDashboardStats />} />
         <Route path="*" element={<NotFound />} /> {/* 404 Not Found */}
       </Routes>
+    </DashboardProvider>
+      
   );
 };
 
