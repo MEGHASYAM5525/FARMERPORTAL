@@ -1,0 +1,110 @@
+/* .header-nav {
+    background-color:black;
+}
+
+.header-nav .navbar-brand {
+    color: white;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 25px;
+}
+
+.header-nav .navbar-brand:hover {
+    color: lawngreen;
+}
+
+.header-nav img {
+    padding-right: 1rem;
+}
+
+.header-nav .navbar-nav .nav-link {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 8px
+}
+
+.header-nav .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    font-size: 1.75rem;
+}
+
+.header-nav .navbar-nav .active>.nav-link, .header-nav .navbar-nav .nav-link.active, .header-nav .navbar-nav .nav-link.show, .header-nav .navbar-nav .show>.nav-link {
+    color: lawngreen;
+}
+
+.header-nav .navbar-nav .nav-link:focus, .header-nav .navbar-nav .nav-link:hover {
+    color: lawngreen;
+}
+
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none;
+    background-color: black;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: white;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.dropdown-item:hover, .dropdown-item.active {
+    background-color: lawngreen;
+    color: black;
+} */
+
+.header-nav {
+    background-color: black !important; /* ✅ Ensure black background */
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* ✅ Ensure it stays above other elements */
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 40px; /* ✅ Adjust size to match the reference */
+    height: auto;
+    margin-right: 10px;
+}
+
+.brand-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: limegreen; /* ✅ Match the reference */
+}
+
+.nav-route {
+    color: white;
+    font-size: 18px;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.nav-route:hover {
+    color: limegreen; /* ✅ Match hover effect */
+}
+
+.login-btn {
+    background-color: green;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: darkgreen;
+}
