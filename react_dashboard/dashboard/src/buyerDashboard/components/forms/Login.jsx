@@ -171,6 +171,7 @@ const Login = () => {
 
       console.log("✅ Login Successful:", data);
       alert("✅ Login successful");
+      localStorage.setItem("buyerId", data.buyerId);  
       localStorage.setItem("loginToken", data.token);
 
       setEmail("");

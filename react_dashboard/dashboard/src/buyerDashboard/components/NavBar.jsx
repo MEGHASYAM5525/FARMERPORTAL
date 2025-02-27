@@ -3,6 +3,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const NavBar = () => {
   const navigate = useNavigate();
 
@@ -10,12 +11,9 @@ const NavBar = () => {
     <nav>
       <h1>Buyer Dashboard</h1>
       <button onClick={() => navigate("/")}>Home</button>
-      {/* <button onClick={() => navigate("/shop")}>Shop</button>  */}
+      <button onClick={() => navigate("/orders")}>My Orders</button>
     </nav>
   );
 };
 
 export default NavBar;
-
-
-

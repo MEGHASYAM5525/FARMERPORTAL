@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import { API_URL } from "../data/apiPath";
@@ -85,6 +87,11 @@ const Shop = () => {
     navigate("/buyer-dashboard-stats");
   };
 
+  // ✅ Redirect to Orders Page
+  const handleOrdersRedirect = () => {
+    navigate("/orders");
+  };
+
   const filteredProducts = products.filter((product) =>
     product.productName.toLowerCase().includes(searchTerm.toLowerCase())
   );
@@ -113,9 +120,9 @@ const Shop = () => {
               className="profile-pic"
             />
             <div className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
-              <p onClick={handleDashboardRedirect}>Dashboard</p> {/* ✅ Redirect on click */} 
-              <p>Orders</p>
-              <p>Payments</p>
+              {/* <p onClick={handleDashboardRedirect}>Dashboard</p> ✅ Redirect on click  */}
+              <p onClick={handleOrdersRedirect}>My Orders</p> {/* ✅ Redirect to Orders */}
+              {/* <p>Payments</p> */}
               <p onClick={handleLogout}>Logout</p> {/* ✅ Logout with redirect */}
             </div>
           </div>

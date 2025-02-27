@@ -1,7 +1,3 @@
-
-
-
-
 const Buyer = require('../models/Buyer');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');

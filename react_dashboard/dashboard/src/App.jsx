@@ -8,6 +8,8 @@ import Login from "./buyerDashboard/components/forms/Login";  // ✅ Fixed impor
 import Register from "./buyerDashboard/components/forms/Register";  // ✅ Fixed import
 import Shop from "./buyerDashboard/components/Shop";
 import Cart from "./buyerDashboard/components/Cart";
+import Order from "./buyerDashboard/components/Orders";
+
  
 import BuyerDashboardStats from "./buyerDashboard/components/BuyerDashboardStats";
 
@@ -27,6 +29,9 @@ const App = () => {
         <Route path="/register" element={<Register />} /> {/* ✅ Fixed Capitalization */}
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/orders" element={<Order />} />
+      
+
        
         <Route path="/buyer-dashboard-stats" element={<BuyerDashboardStats />} />
         <Route path="*" element={<NotFound />} /> {/* 404 Not Found */}

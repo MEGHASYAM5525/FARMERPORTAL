@@ -11,7 +11,7 @@ const Navigation = () => {
         <Navbar className="header-nav" sticky="top" expand="lg">
             <Navbar.Brand href="/">
                 <img src={logo} alt="Logo" className="nav-logo" /> {/* ✅ Add class for styling */}
-                <span className="brand-name">farmFridge</span> {/* ✅ Add text separately */}
+                <span className="brand-name">AGRI CONNECT</span> {/* ✅ Add text separately */}
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

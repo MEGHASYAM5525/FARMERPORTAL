@@ -5,11 +5,12 @@ const Welcome = () => {
 
   return (
     <div className='welcomeSection'>
-        <h2>Welcome {firmName}</h2>
         <div className="landingImage">
-          <img src='/assets/chef.jpg' alt='welcome' />
+          <img src='Farmer Images\farmer.jpeg' alt='welcome' />
         </div>
+        <div><h2>Welcome {firmName}!!</h2></div>
     </div>
+    
   )
 }
 

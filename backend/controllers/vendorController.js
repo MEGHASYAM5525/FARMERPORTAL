@@ -2,7 +2,7 @@ const Vendor = require('../models/Vendor');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const dotEnv = require('dotenv');
-
+const Order = require("../models/Order");
 dotEnv.config();
 
 const secretKey = process.env.WhatIsYourName
@@ -66,22 +66,51 @@ const getAllVendors = async(req, res) => {
 }
 
 
-const getVendorById = async(req, res) => {
-    const vendorId = req.params.apple;
+const getVendorById = async (req, res) => {
+    const vendorId = req.params.apple; // Ensure this matches the route
 
     try {
         const vendor = await Vendor.findById(vendorId).populate('firm');
-        if (!vendor) {
-            return res.status(404).json({ error: "Vendor not found" })
+        if (!vendor) return res.status(404).json({ error: "Vendor not found" });
+
+        if (!vendor.firm || vendor.firm.length === 0) {
+            return res.status(404).json({ error: "Vendor firm not found" });
         }
-        const vendorFirmId = vendor.firm[0]._id;
-        res.status(200).json({ vendorId, vendorFirmId, vendor })
+
+        const vendorFirmId = Array.isArray(vendor.firm) ? vendor.firm[0]._id : vendor.firm._id;
+
+        res.status(200).json({ vendorId, vendorFirmId, vendor });
         console.log(vendorFirmId);
     } catch (error) {
-        console.log(error);
+        console.error(error);
         res.status(500).json({ error: "Internal server error" });
     }
-}
+};
+
+const getVendorOrders = async (req, res) => {
+    try {
+        console.log(req.user); // Debugging line to check if req.user exists
+
+        const vendorId = req.user.vendorId; // Ensure req.user is set in middleware
+        if (!vendorId) return res.status(403).json({ error: "Unauthorized" });
+
+        const vendor = await Vendor.findById(vendorId).populate("firm");
+        if (!vendor) return res.status(404).json({ error: "Vendor not found" });
+
+        if (!vendor.firm || vendor.firm.length === 0) {
+            return res.status(404).json({ error: "No firm associated with vendor" });
+        }
+
+        const firmId = Array.isArray(vendor.firm) ? vendor.firm[0]._id : vendor.firm._id;
+        const orders = await Order.find({ firm: firmId }).populate("items.product");
+
+        res.status(200).json(orders);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
+};
 
 
-module.exports = { vendorRegister, vendorLogin, getAllVendors, getVendorById }
+
+module.exports = { vendorRegister, vendorLogin, getAllVendors, getVendorById,getVendorOrders }
